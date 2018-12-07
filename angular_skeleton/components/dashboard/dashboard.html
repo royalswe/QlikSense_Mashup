@@ -1,0 +1,57 @@
+<style>
+/*** override leonardo-iu style for the tabs ***/
+.lui-tab-container div.qvobject {
+    border: 1px solid #ddd;
+    border-top: transparent;
+}
+.lui-tabset--fill .lui-tab {
+    background-color: rgba(0, 0, 0, 0.05);
+    border-bottom: 2px solid #f8981d;
+    transition: none;
+}
+.lui-tab.lui-active {
+    background-color: transparent;
+    border: 1px solid #ddd;
+    border-bottom: none;
+}
+.lui-tabset--fill .lui-tab:last-child {
+    border-right: 1px solid #ddd;
+}
+.lui-tab-container {
+    width: 50%;
+    height: 300px;
+    padding-left: 1%;
+    padding-right: 1%;
+    float: left;
+}
+.lui-tab-container qvobject{
+    height: 100%;
+}
+</style>
+
+<div class="top-spacing row">
+    <div class="col-xs-12 col-md-6 qvobject" id="QV04"></div>
+    <div class="col-xs-12 col-md-6 qvobject" id="QV05"></div>
+</div>
+
+<lui-tab-view class="lui-tab-container">
+	<lui-tabset fill="true">
+		<lui-tab ref="tab1">Ämne</lui-tab>
+		<lui-tab ref="tab2">Lärare</lui-tab>
+		<lui-tab ref="tab3">Klass</lui-tab>
+	</lui-tabset>
+	<lui-tab-content id="QV06" class="qvobject" ref="tab1"></lui-tab-content>
+	<lui-tab-content id="QV08" class="qvobject" ref="tab2"></lui-tab-content>
+	<lui-tab-content id="QV10" class="qvobject" ref="tab3"></lui-tab-content>
+</lui-tab-view>
+
+<lui-tab-view class="lui-tab-container">
+	<lui-tabset fill="true">
+		<lui-tab ref="tab7">Ämne</lui-tab>
+		<lui-tab ref="tab5">Lärare</lui-tab>
+		<lui-tab ref="tab6">Klass</lui-tab>
+	</lui-tabset>
+    <lui-tab-content id="QV07" class="qvobject" ref="tab7"></lui-tab-content>
+	<lui-tab-content id="QV09" class="qvobject" ref="tab5"></lui-tab-content>
+	<lui-tab-content id="QV11" class="qvobject" ref="tab6"></lui-tab-content>
+</lui-tab-view>

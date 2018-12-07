@@ -1,0 +1,23 @@
+<!-- Bootstrap modal for show app informations -->
+<div class="modal" id="app_info_modal" ng-controller="AppInfoCtrl">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                <h4 class="modal-title">Information!</h4>
+            </div>
+            <div class="modal-body">
+                <p>
+                    IST Analys förskola är en applikation för att hantera information från verksamhetssystemen som berör förskola. 
+                    Data laddas regelbundet varje natt.
+                </p>
+                <p>{{user}}</p>
+                <p>Version BETA</p>
+                <P>Senaste laddningen: {{lastReload}}</P>
+            </div>
+            <div class="modal-footer">
+                IST Analys förskola
+            </div>
+        </div>
+    </div>
+</div>

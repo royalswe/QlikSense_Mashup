@@ -1,0 +1,16 @@
+{
+	"name": "AngularListbox",
+	"description": "Horizontal listbox based on angular",
+	"type": "visualization",
+	"icon": "list",
+	"preview": "icon.png",
+	"version": "1.0.0",
+	"author": "IST Analytics",
+	"homepage": "https://www.ist.com",
+	"keywords": "qlik-sense, visualization",
+	"license": "MIT",
+	"repository": "",
+	"dependencies": {
+		"qlik-sense": ">=3.0.x"
+	}
+}

@@ -1,0 +1,52 @@
+﻿<div class="navbar navbar-fixed-top navbar-custom" role="navigation" ng-controller="HeaderCtrl">
+    <div class="container">
+        <a class="lui-icon lui-icon--info" id="show_app_info" ng-click="openInfoModal()"></a>
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <span class="main-nav-logo" id="title"></span>
+            <span class="navbar-brand" id="current_sheet_title"></span>
+
+        </div>
+        <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav pull-right">
+                <li>
+                    <a class="qcmd lui-icon lui-icon--sheet" title="Visa flikar" id="show_sheets"></a>
+                </li>
+                <li>
+                    <a class="qcmd lui-icon lui-icon--clear-selections" title="Rensa samtliga urval" data-qcmd="clearAll"></a>
+                </li>
+                <li>
+                    <a class="qcmd lui-icon lui-icon--back" title="Bakåt" data-qcmd="back"></a>
+                </li>
+                <li>
+                    <a class="qcmd lui-icon lui-icon--forward" title="Framåt" data-qcmd="forward"></a>
+                </li>
+                <li>
+                    <a class="qcmd lui-icon lui-icon--lock" title="Lås urvalen" data-qcmd="lockAll"></a>
+                </li>
+                <li>
+                    <a class="qcmd lui-icon lui-icon--unlock" title="Lås upp urvalen" data-qcmd="unlockAll"></a>
+                </li>
+                <li class="dropdown qcmd">
+                    <a class="dropdown-toggle lui-icon lui-icon--bookmark" title="Bokmärken" data-toggle="dropdown"><b class="caret"></b></a>
+                    <ul id="qbmlist" class="dropdown-menu dropdown-menu-right"></ul>
+                </li>
+                <li class="dropdown">
+                    <a class="dropdown-toggle lui-icon lui-icon--insert" title="Exportera/Importera urval" data-toggle="dropdown"><b class="caret"></b></a>                 
+                    <ul class="dropdown-menu dropdown-menu-right">
+                        <export-bookmark></export-bookmark>
+                    </ul>  
+                </li>
+            </ul>
+        </div>
+        <!--/.nav-collapse -->
+    </div>
+</div>
+
+    <!-- Sheet navigation bar -->
+<nav id="sheet_nav"></nav>

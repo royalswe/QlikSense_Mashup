@@ -1,0 +1,77 @@
+v1.0.0:
+  date: "2017-05-04"
+  new:
+    - Initial Commit
+  enhancements:
+v1.1.0:
+  date: "2017-06-01"
+  new:
+    - Colorize data points/bars
+  enhancements:
+    - Larger navigation text
+    - Fixed absolute banding and add explanation text
+    - Hide labels
+    - More icons
+v1.1.1:
+  date: "2017-08-11"
+  new:
+  enhancements:
+    - Fixed bug with colorized bars/line/points 
+    - Fixed bug with negative values in trend chart
+v1.2.0:
+  date: "2017-08-16"
+  new:
+    -Working export
+  enhancements:
+v1.2.1:
+  date: "2017-09-05"
+  new:
+    - Fixed bug with relative and absolute comparison
+  enhancements:
+v1.2.2:
+  date: "2017-09-05"
+  new:
+    - Added space between label and target value 
+  enhancements:
+v1.3:
+  date: "2017-09-05"
+  new:
+    - Change Up/Down Arrow
+    - Equal to comparison is "good" color
+  enhancements:
+v1.3.1:
+  date: "2018-01-18"
+  new:
+    - Changeble Up/Down/Right Arrows
+  enhancements:
+v1.4.0:
+  date: "2018-02-14"
+  new:
+  enhancements:
+    - Updated for February 2018
+v1.4.1:
+  date: "2018-03-11"
+  new:
+  enhancements:
+    - New preview logo and about panel
+v1.4.2:
+  date: "2018-03-20"
+  new:
+  enhancements:
+    - Fixed bug for select values (action)
+v1.4.3:
+  date: "2018-04-04"
+  new:
+  enhancements:
+    - Export problem solved from QS 201706
+v1.4.4:
+  date: "2018-04-05"
+  new:
+  enhancements:
+    - Removed old code
+v1.4.5:
+  date: "2018-04-11"
+  new:
+  enhancements:
+    - Icon fix for mashup. Relative path
+  

@@ -1,0 +1,117 @@
+<div class="kpi-interaction-layer" ng-mouseover="mouseover()" ng-mouseout="mouseout()" ng-style="{ 'width' : options.size.width, 'height' : options.size.height, 'background-color' : options.color.background }">
+	<div ng-show="options.showBackgroundImage" class="kpi-background-image kpi-background-image--{{options.backgroundImageSizeMode}}"
+	 ng-style="{'background-image': 'url('+ options.backgroundImageUrl +')'}"></div>
+	<div ng-show="options.showBackgroundIcon" class="kpi-background-icon">
+		<i class="cl-icon {{options.icons.icon}}" ng-style="{ 'color' : options.color.icon, 'font-size' : options.backgroundIconSize}"></i>
+	</div>
+	<div class="trendchart" ng-style="{ 'width' : options.size.width, 'height' : options.size.height }"></div>
+	<div ng-if="!options.noMeasures" class="kpi-container kpi-container--{{options.align}}" ng-hide="showOverlay && options.hoverMode === 'details'">
+		<!-- Standard text layout  -->
+		<div ng-if="options.textLayoutMode === 'standard'" class="text kpi-container__textwrapper--{{options.layoutMode}} kpi-container__textwrapper--margins-{{options.marginType}}"
+		 ng-style="{'width' : options.size.textWrapperWidth, 'color': options.color.text, 'font-size': options.fontsize}">
+			<div class="textblock__block textblock--{{options.textWeight}}">
+				<i ng-if="showIconWithTitle()" class="textblock__icon--{{options.blockSizes.one}}-blocks cl-icon {{options.icons.icon}}"
+				 ng-style="{ 'color' : options.color.icon}"></i>
+				<i ng-if="showIconWithTitle() && options.icons.icon2" class="textblock__icon--{{options.blockSizes.one}}-blocks cl-icon {{options.icons.icon2}}"
+				 ng-style="{ 'color' : options.color.icon}"></i>
+				<span title="{{options.labels.kpi}}" ng-if="!options.hideKpiLabel" class="textblock__text--{{options.blockSizes.one}}-blocks textblock__text--{{options.wrapKpiLabel}}">{{options.labels.kpi}} <p ng-if="options.wrapKpiLabel==='wrap'"></p></span>
+			</div>
+			<div class="textblock__block textblock--{{options.textWeight}}">
+				<i ng-if="showIcon()" class="textblock__icon--{{options.blockSizes.two}}-blocks cl-icon {{options.icons.icon}}" ng-style="{ 'color' : options.color.icon}"></i>
+				<i ng-if="showIcon() && options.icons.icon2" class="textblock__icon--{{options.blockSizes.two}}-blocks cl-icon {{options.icons.icon2}}"
+				 ng-style="{ 'color' : options.color.icon}"></i>
+				<span class="textblock__text--{{options.blockSizes.two}}-blocks">{{options.measures.kpi}}</span>
+			</div>
+			<div class="textblock__text--{{options.blockSizes.three}}-blocks"><span ng-if="!options.hideTargetValue">{{options.measures.target}}</span><span ng-if="!options.hideTargetLabel"> {{options.labels.target}}</span></div>
+		</div>
+		<!-- Comparison Focus text layout -->
+		<div ng-if="options.textLayoutMode === 'comparisonFocus'" class="text kpi-container__textwrapper--{{options.layoutMode}} kpi-container__textwrapper--margins-{{options.marginType}}"
+		 ng-style="{'width' : options.size.textWrapperWidth, 'color': options.color.text, 'font-size': options.fontsize}">
+			<div class="textblock__block textblock--{{options.textWeight}}">
+				<i ng-if="showIconWithTitle()" class="textblock__icon--{{options.blockSizes.one}}-blocks cl-icon {{options.icons.icon}}"
+				 ng-style="{ 'color' : options.color.icon}"></i>
+				<i ng-if="showIconWithTitle() && options.icons.icon2" class="textblock__icon--{{options.blockSizes.one}}-blocks cl-icon {{options.icons.icon2}}"
+				 ng-style="{ 'color' : options.color.icon}"></i>
+				<span title="{{options.labels.kpi}}" ng-if="!options.hideKpiLabel" class="textblock__text--{{options.blockSizes.one}}-blocks textblock__text--{{options.wrapKpiLabel}}" >{{options.labels.kpi}} <p ng-if="options.wrapKpiLabel==='wrap'"></p></span>
+			</div>
+			<div class="textblock__block textblock--{{options.textWeight}}">
+				<i ng-if="showIcon()" class="textblock__icon--{{options.blockSizes.two}}-blocks cl-icon {{options.icons.icon}}" ng-style="{ 'color' : options.color.icon}"></i>
+				<i ng-if="showIcon() && options.icons.icon2" class="textblock__icon--{{options.blockSizes.two}}-blocks cl-icon {{options.icons.icon2}}"
+				 ng-style="{ 'color' : options.color.icon}"></i>
+				<span class="textblock__text--{{options.blockSizes.two}}-blocks">{{options.measures.comparison}}</span>
+			</div>
+			<div>
+				<div>
+					<div class="textblock__text--{{options.blockSizes.three}}-blocks"><span>{{options.measures.kpi}}</span></div>
+					<div class="textblock__text--{{options.blockSizes.four}}-blocks"><span ng-if="!options.hideTargetValue">{{options.measures.target}}</span> <span ng-if="!options.hideTargetValue"> {{options.labels.target}}</span></div>
+				</div>
+			</div>
+		</div>
+		<!-- Comparison text layout-->
+		<div ng-if="options.textLayoutMode === 'comparison'" class="text kpi-container__textwrapper--{{options.layoutMode}} kpi-container__textwrapper--margins-{{options.marginType}}"
+		 ng-style="{'width' : options.size.textWrapperWidth, 'color': options.color.text, 'font-size': options.fontsize}">
+			<div class="textblock__block textblock--{{options.textWeight}}">
+				<i ng-if="showIconWithTitle()" class="textblock__icon--{{options.blockSizes.one}}-blocks cl-icon {{options.icons.icon}}"
+				 ng-style="{ 'color' : options.color.icon}"></i>
+				<i ng-if="showIconWithTitle() && options.icons.icon2" class="textblock__icon--{{options.blockSizes.one}}-blocks cl-icon {{options.icons.icon2}}"
+				 ng-style="{ 'color' : options.color.icon}"></i>
+				<span title="{{options.labels.kpi}}" ng-if="!options.hideKpiLabel" class="textblock__text--{{options.blockSizes.one}}-blocks textblock__text--{{options.wrapKpiLabel}}">{{options.labels.kpi}} <p ng-if="options.wrapKpiLabel==='wrap'"></p></span>
+			</div>
+			<div class="textblock__block textblock--{{options.textWeight}}">
+				<span class="textblock__text--{{options.blockSizes.two}}-blocks">{{options.measures.kpi}}</span>
+			</div>
+			<div class="textblock__block">
+				<i ng-if="showIcon()" class="textblock__icon--{{options.blockSizes.three}}-blocks cl-icon {{options.icons.icon}}" ng-style="{ 'color' : options.color.icon}"></i>
+				<i ng-if="showIcon() && options.icons.icon2" class="textblock__icon--{{options.blockSizes.three}}-blocks cl-icon {{options.icons.icon2}}"
+				 ng-style="{ 'color' : options.color.icon}"></i>
+				<span class="textblock__text--{{options.blockSizes.three}}-blocks" ng-style="{ 'color' : options.color.icon}">{{options.measures.comparison}}</span></div>
+		</div>
+		<!-- KPI Focus text layout -->
+		<div ng-if="options.textLayoutMode === 'kpiFocus'" class="text kpi-container__textwrapper--{{options.layoutMode}} kpi-container__textwrapper--margins-{{options.marginType}}"
+		 ng-style="{'width' : options.size.textWrapperWidth, 'color': options.color.text, 'font-size': options.fontsize}">
+			<div class="textblock__block textblock--{{options.textWeight}}">
+				<i ng-if="showIconWithTitle()" class="textblock__icon--{{options.blockSizes.one}}-blocks cl-icon {{options.icons.icon}}"
+				 ng-style="{ 'color': options.color.icon}"></i>
+				<i ng-if="showIconWithTitle() && options.icons.icon2" class="textblock__icon--{{options.blockSizes.one}}-blocks  cl-icon {{options.icons.icon2}}"
+				 ng-style="{ 'color': options.color.icon}"></i>
+				<span title="{{options.labels.kpi}}" ng-if="!options.hideKpiLabel" class="textblock__text--{{options.blockSizes.one}}-blocks textblock__text--{{options.wrapKpiLabel}}">{{options.labels.kpi}} <p ng-if="options.wrapKpiLabel==='wrap'"></p></span>
+			</div>
+			<div class="textblock__block textblock--{{options.textWeight}}" ng-style="{'color' : options.color.icon}">
+				<i ng-if="showIcon()" class="textblock__icon--{{options.blockSizes.two}}-blocks  cl-icon {{options.icons.icon}}"></i>
+				<i ng-if="showIcon() && options.icons.icon2" class="textblock__icon--{{options.blockSizes.two}}-blocks  cl-icon {{options.icons.icon2}}"></i>
+				<span class="textblock__text--{{options.blockSizes.two}}-blocks">{{options.measures.kpi}}</span>
+			</div>
+			<div class="textblock__block">
+				<div ng-if="options.inTargetMode" class="textblock__text--{{options.blockSizes.three}}-blocks"><span ng-if="!options.hideTargetValue"> {{options.labels.target}}</span> <span ng-if="!options.hideTargetValue">{{options.measures.target}}</span> (<span ng-style="{ 'color' : options.color.icon}"><span>{{options.measures.comparison}}</span></span>)</div>
+			</div>
+		</div>
+	</div>
+	<div ng-show="showOverlay" class="overlay overlay--{{options.hoverMode}}" ng-style="{'background-color': options.color.overlay, 'font-size': options.fontsizeOverlay}">
+		<div ng-if="options.navigation.mode" class="overlay--{{options.textWeight}}">
+			<div ng-if="options.navigation.mode && options.navigation.showButton" class="overlay__button" ng-style="{'color': options.color.navigation, 'border-color': options.color.navigation}"
+			 ng-click="gotoSheet()">{{options.navigation.text}}</div>
+			<div ng-if="options.navigation.mode && !options.navigation.showButton" class="overlay__navigationtext textblock__block" ng-style="{'color': options.color.navigation, 'width' : options.size.width, 'height' : options.size.height, 'cursor' : 'pointer'}"
+			 ng-click="gotoSheet()"><span class="textblock__text--5-blocks">{{options.navigation.text}}</span></div>
+		</div>
+		<div ng-if="options.showDetails" class="text" ng-style="{'color' : 'white'}">
+			<div class="textblock__block textblock--{{options.textWeight}}">
+				<i ng-if="showIconWithTitle()" class="textblock__icon--3-blocks  cl-icon {{options.icons.icon}}" ng-style="{ 'color' : options.color.icon}"></i>
+				<i ng-if="showIconWithTitle() && options.icons.icon2" class="textblock__icon--3-blocks  cl-icon {{options.icons.icon2}}"
+				 ng-style="{ 'color' : options.color.icon}"></i>
+				<span title="{{options.labels.kpi}}" ng-if="!options.hideKpiLabel" class="textblock__text--3-blocks textblock__text--{{options.wrapKpiLabel}}" >{{options.labels.kpi}} <p ng-if="options.wrapKpiLabel==='wrap'"></p></span>
+			</div>
+			<div class="textblock__block textblock--{{options.textWeight}}">
+				<i ng-if="showIcon()" class="textblock__icon--5-blocks  cl-icon {{options.icons.icon}}" ng-style="{ 'color' : options.color.icon}"></i>
+				<i ng-if="showIcon() && options.icons.icon2" class="textblock__icon--5-blocks  cl-icon {{options.icons.icon2}}" ng-style="{ 'color' : options.color.icon}"></i>
+				<span class="textblock__text--5-blocks">{{options.measures.kpi}}</span>
+			</div>
+			<div class="textblock__block">
+				<div ng-if="options.comparisionIsRelative && options.inTargetMode" class="textblock__text--2-blocks"> (<span ng-style="{ 'color' : options.color.icon}"><span>{{options.measures.comparison}}</span></span>)</div>
+				<div ng-if="!options.comparisionIsRelative && options.inTargetMode" class="textblock__text--2-blocks">(<span ng-style="{ 'color' : options.color.icon}"><span>{{options.measures.comparison}}</span></span>)</div>
+			</div>
+			<div class="textblock__block">
+				<div ng-if="!options.hideTargetValue" class="textblock__text--2-blocks"><span>{{options.measures.target}}</span> <span ng-if="!options.hideTargetValue"> {{options.labels.target}}</span></div>
+			</div>
+		</div>
+	</div>
+</div>

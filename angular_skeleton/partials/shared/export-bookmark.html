@@ -1,0 +1,12 @@
+<div ng-controller="ExportBookmarkCtrl">
+    <label class="custom-file-upload tooltip-popup">
+        <input type="file" name="export-file" onchange="angular.element(this).scope().import()" id="selectedFile" value="Import" accept=".json,application/json" />
+        <i class="lui-icon lui-icon--import"></i> Importera urval
+        <span class="tooltiptext">Importera urval från vald fil.</span>
+    </label>    
+
+    <a class="custom-file-upload tooltip-popup" ng-click="export()" >
+        <i class="lui-icon lui-icon--export"></i> Exportera alla urval
+        <span class="tooltiptext">Skapa fil med samtliga urval.</span>
+    </a>
+</div>

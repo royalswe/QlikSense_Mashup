@@ -1,0 +1,45 @@
+﻿<!-- Bootstrap create bookmark modal -->
+<div class="modal" id="create_bm_modal" ng-controller="BookmarkCtrl">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                <h4 class="modal-title">Skapa bokmärke</h4>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <label for="bmtitle" class="control-label">Title:</label>
+                    <input type="text" class="form-control" id="bmtitle">
+                    <label for="bmdesc" class="control-label">Description:</label>
+                    <input type="text" class="form-control" id="bmdesc">
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button type="button" data-bookmark="create" class="btn btn-primary">Create</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Bootstrap delete bookmark modal -->
+<div class="modal fade" id="confirm_delete" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title" id="myModalLabel">Bekräfta borttagning av bokmärke</h4>
+            </div>
+
+            <div class="modal-body">
+                <p>Du håller på att ta bort bokmärket <b class="bookmark"></b>.</p>
+                <p>Vill du fortsätta?</p>
+            </div>
+
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Avbryt</button>
+                <button type="button" class="btn btn-danger btn-ok" data-bookmark="delete">Radera</button>
+            </div>
+        </div>
+    </div>
+</div>
